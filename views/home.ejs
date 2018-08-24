@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" />
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="block">
+        <% for(var i=0; i<xp.length; i++) { %>
+                <div class="rank"><%=i+1%></div>
+                <img class="avatar" src="<%=xp[i].avatarurl %>">
+                <div class="user"><%=xp[i].name %></div>
+                <div class="exp"><%=xp[i].level%>lvl <br>( <%=xp[i].xp%> xp )</div>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>
