@@ -1,57 +1,93 @@
 html {
-    font-size: 8px;
-}
-
-@media screen and (min-width: 24.25rem) {
-    html {
-        font-size: calc(100vw / 48.5);
-    }
+    font-size: 21px;
 }
 
 body { 
     margin: 0; 
     background: rgb(32, 34, 37); 
-    color: #fafafa; 
+    color: #efefef; 
     font-family: 'Montserrat', sans-serif; 
 }
+
+.title {
+    margin-top: 150px;
+    font-size: 68px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
 .wrapper { 
-    justify-content: space-around; 
-    background-color: rgb(42, 44, 49);
-    width: 30rem;
-    margin: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(39, 42, 46);
+    padding: 10px;
 }
 
 .block {
-    background-color: rgb(47, 49, 54);
-    display: grid;
-    grid-template-columns: 2rem 3rem auto auto;
-    grid-row-gap: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    grid-template-rows: 5rem;
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(43, 47, 51);
+    height: 72px;
+    border-radius: 2%;
+}
+
+.block:first-child {
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(43, 47, 51);
+    height: 72px;
+    border-radius: 2%;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.422);
+    box-shadow: 0px 0px 10px rgba(212, 212, 212, 0.172);
 }
 
 .rank {
+    display: inline-block;
+    width: 80px;
+    font-size: 48px;
+    font-weight: 700;
     text-align: center;
-    align-self: center;
+    vertical-align: middle;
 }
 
 .avatar {
-    height: 3rem;
+    display: inline-block;
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .user {
-    background: blue;
-    text-align: center;
-    align-self: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: 350px;
+    font-size: 32px;
+    font-weight: 400;
+    margin-left: 50px;
 }
 
 .exp {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
     text-align: center;
-    align-self: center;
-    background-color: red;
+}
+
+.lvl {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 10px;
+    width: 150px;
+    font-weight: 450;
 }

@@ -36,7 +36,7 @@ app.use(flash());
 // === DATABASE CONTROLLER === //
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/ranking', (req, res) => {
     sqlcon.query("SELECT * FROM scoreboard ORDER BY xp DESC LIMIT 10", (e, result) => {
         if(e) {
             res.write("Błąd");
@@ -58,6 +58,10 @@ router.get('/', (req, res) => {
         }
         res.render('home', data);
     });
+});
+
+router.get('/ab', (req, res) => {
+    res.render('test');
 });
 
 app.use('/', router);
