@@ -1,3 +1,4 @@
+// === MODULES === //
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -5,15 +6,19 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const mysql = require('mysql');
-const bot_token = require('./token.json').token;
 const sync = require('sync-request');
 
+const bot_token = require('./token.json').token;
+const mysql_c = require('./mysql.json');
+
 const app = express();
+
+// === MYSQL CONNECTION === //
 const sqlcon = mysql.createConnection({
-    host: "localhost", 
-    user: "root", 
-    password: "",
-    database: "zbigniew-bot",
+    host: mysql_c.host, 
+    user: mysql_c.user, 
+    password: mysql_c.password,
+    database: mysql_c.database,
     supportBigNumbers: true,
     bigNumberString: true
 })
@@ -22,6 +27,8 @@ sqlcon.connect(e => {
     if(e) throw e;
     console.log("Połączono prawodłowo z bazą danych.");
 })
+
+// === LOADING PAGE === //
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -33,7 +40,7 @@ app.use(cookieParser());
 
 app.use(flash());
 
-// === DATABASE CONTROLLER === //
+// === RANKING PAGE === //
 const router = express.Router();
 
 router.get('/ranking', (req, res) => {
@@ -60,8 +67,10 @@ router.get('/ranking', (req, res) => {
     });
 });
 
+
+// === EXAMPLE PAGE === //
 router.get('/ab', (req, res) => {
-    res.render('test');
+    res.render('example');
 });
 
 app.use('/', router);
